@@ -46,8 +46,20 @@ export default function AboutPage() {
       </section>
 
       {/* Company Introduction */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="/images/image.jpg"
+            alt="Company introduction background"
+            fill
+            className="object-cover opacity-10"
+          />
+          <div className="absolute top-0 left-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
+        </div>
+        
+        <div className="max-w-6xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}

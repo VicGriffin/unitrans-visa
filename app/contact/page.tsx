@@ -47,8 +47,20 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Information */}
-      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="/images/pexels-akbissue-29558445.jpg"
+            alt="Contact information background"
+            fill
+            className="object-cover opacity-10"
+          />
+          <div className="absolute top-0 left-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
+        </div>
+        
+        <div className="max-w-6xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Contact Details */}
             <motion.div
