@@ -138,7 +138,8 @@ export default function ConsultationForm() {
 
               {/* Submit Button */}
               <button
-                type="submit"
+                type="button"
+                onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSeZU6Pl82NN9ZOIrQgHshdBj-G3SEB7T1N64PHWfyxT4SSJ7Q/viewform', '_blank')}
                 className="w-full py-4 bg-primary text-primary-foreground rounded-lg font-bold hover:opacity-90 transition mt-2"
               >
                 Schedule Free Consultation

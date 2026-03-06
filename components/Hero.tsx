@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { ArrowRight, Globe } from 'lucide-react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function Hero() {
   const containerVariants = {
@@ -30,9 +31,21 @@ export default function Hero() {
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/5 -z-10" />
       
+      {/* Background Image */}
+      <div className="absolute inset-0 -z-20">
+        <Image
+          src="/images/Studying Abroad In The United States Psd Layering Background Wallpaper Image For Free Download - Pngtree.jpg"
+          alt="Study abroad background"
+          fill
+          className="object-cover opacity-40"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/70 via-background/50 to-background/70" />
+      </div>
+      
       {/* Animated Background Elements */}
-      <div className="absolute top-20 right-10 w-72 h-72 bg-accent/20 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10 animate-blob" />
-      <div className="absolute bottom-20 left-10 w-72 h-72 bg-primary/20 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10 animate-blob animation-delay-2000" />
+      <div className="absolute top-10 right-4 w-32 h-32 sm:w-48 sm:h-48 md:w-72 md:h-72 bg-accent/20 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10 animate-blob" />
+      <div className="absolute bottom-10 left-4 w-32 h-32 sm:w-48 sm:h-48 md:w-72 md:h-72 bg-primary/20 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10 animate-blob animation-delay-2000" />
 
       <motion.div 
         className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
@@ -53,7 +66,7 @@ export default function Hero() {
 
         {/* Headline */}
         <motion.h1 
-          className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-foreground leading-tight"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground leading-tight"
           variants={itemVariants}
         >
           Study Abroad Made <span className="text-primary">Simple</span>
@@ -61,7 +74,7 @@ export default function Hero() {
 
         {/* Subheadline */}
         <motion.p 
-          className="text-lg sm:text-xl text-foreground/70 mb-8 max-w-2xl mx-auto leading-relaxed"
+          className="text-base sm:text-lg md:text-xl text-foreground/70 mb-8 max-w-2xl mx-auto leading-relaxed px-2"
           variants={itemVariants}
         >
           Get expert guidance for university admissions, student visas, scholarships, and travel preparation. We've helped 1200+ students achieve their dreams abroad.
@@ -69,21 +82,24 @@ export default function Hero() {
 
         {/* CTA Buttons */}
         <motion.div 
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 sm:mb-12 px-4"
           variants={itemVariants}
         >
-          <Link href="/contact" className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition flex items-center gap-2 group">
+          <button 
+            onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSeZU6Pl82NN9ZOIrQgHshdBj-G3SEB7T1N64PHWfyxT4SSJ7Q/viewform', '_blank')}
+            className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition flex items-center justify-center gap-2 group"
+          >
             Book Free Consultation
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition" />
-          </Link>
-          <Link href="/destinations" className="px-8 py-4 bg-accent text-accent-foreground rounded-lg font-semibold hover:bg-accent/90 transition border border-border">
+          </button>
+          <Link href="/destinations" className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-accent text-accent-foreground rounded-lg font-semibold hover:bg-accent/90 transition border border-border flex items-center justify-center">
             Explore Study Destinations
           </Link>
         </motion.div>
 
         {/* Stats */}
         <motion.div 
-          className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl mx-auto"
+          className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-2xl mx-auto px-4"
           variants={itemVariants}
         >
           {[
@@ -92,8 +108,8 @@ export default function Hero() {
             { value: '10+', label: 'Partner Countries' },
             { value: '50+', label: 'Partner Universities' },
           ].map((stat) => (
-            <div key={stat.label} className="bg-card/50 backdrop-blur-sm border border-border rounded-lg p-4">
-              <p className="text-2xl sm:text-3xl font-bold text-primary mb-1">{stat.value}</p>
+            <div key={stat.label} className="bg-card/50 backdrop-blur-sm border border-border rounded-lg p-3 sm:p-4">
+              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-1">{stat.value}</p>
               <p className="text-xs sm:text-sm text-foreground/60">{stat.label}</p>
             </div>
           ))}

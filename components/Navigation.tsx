@@ -27,7 +27,7 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             <Link href="/" className="text-foreground hover:text-primary transition">Home</Link>
             <Link href="/about" className="text-foreground hover:text-primary transition">About</Link>
             
@@ -61,15 +61,56 @@ export default function Navigation() {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Link href="/services" className="text-foreground hover:text-primary transition">Services</Link>
+            {/* Services Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="text-foreground hover:text-primary p-0">
+                  Services
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem asChild>
+                  <Link href="/services#university-application" className="w-full">University Application</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/services#university-admission" className="w-full">University Admission</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/services#student-counselling" className="w-full">Student Counselling</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/services#accommodation-arrangements" className="w-full">Accommodation Arrangements</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/services#visa-processing" className="w-full">Visa Processing</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/services#ielts-training" className="w-full">IELTS Training</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/services#student-loans" className="w-full">Student Loans</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/services#flight-booking" className="w-full">Flight Booking</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/services#pre-post-departure" className="w-full">Pre & Post Departure</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             <Link href="/events" className="text-foreground hover:text-primary transition">Upcoming Events</Link>
             <Link href="/location" className="text-foreground hover:text-primary transition">Location</Link>
-            <Link href="/contact" className="text-foreground hover:text-primary transition">Contact Us</Link>
+            <Link href="/contact" className="text-foreground hover:text-primary transition">Contact</Link>
           </div>
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
-            <Button className="px-6 py-2 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition">
+            <Button 
+              className="px-6 py-2 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition"
+              onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSeZU6Pl82NN9ZOIrQgHshdBj-G3SEB7T1N64PHWfyxT4SSJ7Q/viewform', '_blank')}
+            >
               Book Free Consultation
             </Button>
           </div>
@@ -92,8 +133,11 @@ export default function Navigation() {
             <Link href="/services" className="block px-4 py-2 text-foreground hover:bg-muted rounded">Services</Link>
             <Link href="/events" className="block px-4 py-2 text-foreground hover:bg-muted rounded">Upcoming Events</Link>
             <Link href="/location" className="block px-4 py-2 text-foreground hover:bg-muted rounded">Location</Link>
-            <Link href="/contact" className="block px-4 py-2 text-foreground hover:bg-muted rounded">Contact Us</Link>
-            <Button className="w-full mt-2 px-6 py-2 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition">
+            <Link href="/contact" className="block px-4 py-2 text-foreground hover:bg-muted rounded">Contact</Link>
+            <Button 
+              className="w-full mt-2 px-6 py-2 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition"
+              onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSeZU6Pl82NN9ZOIrQgHshdBj-G3SEB7T1N64PHWfyxT4SSJ7Q/viewform', '_blank')}
+            >
               Book Free Consultation
             </Button>
           </div>

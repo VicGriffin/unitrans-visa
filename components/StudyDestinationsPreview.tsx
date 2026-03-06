@@ -91,7 +91,7 @@ export default function StudyDestinationsPreview() {
 
         {/* Destinations Grid */}
         <motion.div 
-          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -106,22 +106,22 @@ export default function StudyDestinationsPreview() {
             >
               {/* Country Header */}
               <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-3">
-                  <span className="text-3xl">{destination.flag}</span>
-                  <h3 className="text-xl font-semibold text-foreground">{destination.name}</h3>
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <span className="text-2xl sm:text-3xl">{destination.flag}</span>
+                  <h3 className="text-lg sm:text-xl font-semibold text-foreground">{destination.name}</h3>
                 </div>
               </div>
 
               {/* Tuition Range */}
               <div className="flex items-center gap-2 mb-3">
-                <DollarSign className="w-4 h-4 text-primary" />
-                <span className="text-sm text-foreground/70">{destination.tuitionRange}</span>
+                <DollarSign className="w-4 h-4 text-primary flex-shrink-0" />
+                <span className="text-xs sm:text-sm text-foreground/70">{destination.tuitionRange}</span>
               </div>
 
               {/* Popular Programs */}
               <div className="mb-4">
                 <div className="flex items-center gap-2 mb-2">
-                  <GraduationCap className="w-4 h-4 text-primary" />
+                  <GraduationCap className="w-4 h-4 text-primary flex-shrink-0" />
                   <span className="text-sm font-medium text-foreground">Popular Programs:</span>
                 </div>
                 <div className="flex flex-wrap gap-1">
@@ -137,19 +137,19 @@ export default function StudyDestinationsPreview() {
               </div>
 
               {/* Apply Button */}
-              <Link 
-                href={`/destinations#${destination.id}`}
-                className="w-full px-4 py-2 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition text-center block"
+              <button 
+                onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSeZU6Pl82NN9ZOIrQgHshdBj-G3SEB7T1N64PHWfyxT4SSJ7Q/viewform', '_blank')}
+                className="w-full px-3 sm:px-4 py-2 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition text-center block text-sm"
               >
                 Apply Now
-              </Link>
+              </button>
             </motion.div>
           ))}
         </motion.div>
 
         {/* View All Button */}
         <motion.div 
-          className="text-center mt-12"
+          className="text-center mt-8 sm:mt-12"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
@@ -157,10 +157,10 @@ export default function StudyDestinationsPreview() {
         >
           <Link 
             href="/destinations"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-accent text-accent-foreground rounded-lg font-semibold hover:bg-accent/90 transition border border-border"
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-2 sm:py-3 bg-accent text-accent-foreground rounded-lg font-semibold hover:bg-accent/90 transition border border-border text-sm sm:text-base"
           >
             View All Destinations
-            <MapPin className="w-5 h-5" />
+            <MapPin className="w-4 h-4 sm:w-5 sm:h-5" />
           </Link>
         </motion.div>
       </div>

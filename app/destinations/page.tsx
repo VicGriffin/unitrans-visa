@@ -3,8 +3,9 @@
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import { motion } from 'framer-motion'
-import { DollarSign, GraduationCap, FileText, MapPin, ArrowRight } from 'lucide-react'
+import { MapPin, DollarSign, GraduationCap, Clock, Users, FileText, Shield, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import Image from 'next/image'
 
 const destinations = [
   {
@@ -16,7 +17,7 @@ const destinations = [
     visaRequirements: 'Study permit, GIC proof, language proficiency (IELTS 6.5+), medical clearance',
     popularUniversities: ['University of Toronto', 'McGill University', 'UBC', 'University of Waterloo'],
     popularPrograms: ['Engineering', 'Business', 'IT', 'Healthcare', 'Environmental Sciences'],
-    image: '/canada.jpg'
+    image: '/images/Best Immigration Consultant Australia, Visa Services in Australia.jpg'
   },
   {
     id: 'uk',
@@ -27,7 +28,7 @@ const destinations = [
     visaRequirements: 'Tier 4 visa, CAS letter, financial proof, English proficiency (IELTS 6.0+)',
     popularUniversities: ['Oxford University', 'Cambridge', 'Imperial College', 'LSE', 'UCL'],
     popularPrograms: ['Medicine', 'Law', 'Business', 'Engineering', 'Arts & Humanities'],
-    image: '/uk.jpg'
+    image: '/images/pexels-mikhail-nilov-9158358.jpg'
   },
   {
     id: 'germany',
@@ -38,7 +39,7 @@ const destinations = [
     visaRequirements: 'Student visa, proof of funds, health insurance, language proficiency',
     popularUniversities: ['TU Munich', 'Heidelberg University', 'RWTH Aachen', 'Free University of Berlin'],
     popularPrograms: ['Engineering', 'Computer Science', 'Research', 'Natural Sciences', 'Business'],
-    image: '/germany.jpg'
+    image: '/images/pexels-n-voitkevich-7235804.jpg'
   },
   {
     id: 'usa',
@@ -49,7 +50,7 @@ const destinations = [
     visaRequirements: 'F-1 visa, I-20 form, SEVIS fee, financial documentation, embassy interview',
     popularUniversities: ['MIT', 'Stanford', 'Harvard', 'Berkeley', 'UCLA'],
     popularPrograms: ['Computer Science', 'MBA', 'Healthcare', 'Engineering', 'Liberal Arts'],
-    image: '/usa.jpg'
+    image: '/images/Studying Abroad In The United States Psd Layering Background Wallpaper Image For Free Download - Pngtree.jpg'
   },
   {
     id: 'australia',
@@ -60,7 +61,7 @@ const destinations = [
     visaRequirements: 'Student visa (subclass 500), CoE, GTE statement, health insurance (OSHC)',
     popularUniversities: ['University of Melbourne', 'ANU', 'University of Sydney', 'Monash', 'UNSW'],
     popularPrograms: ['Marine Biology', 'Tourism', 'Agriculture', 'Business', 'Environmental Studies'],
-    image: '/australia.jpg'
+    image: '/images/pexels-tima-miroshnichenko-6549351.jpg'
   },
   {
     id: 'uae',
@@ -71,7 +72,7 @@ const destinations = [
     visaRequirements: 'Student visa, admission letter, sponsor, medical fitness test, Emirates ID',
     popularUniversities: ['UAE University', 'American University of Sharjah', 'Khalifa University', 'University of Wollongong Dubai'],
     popularPrograms: ['Business', 'Engineering', 'Hospitality', 'IT', 'Architecture'],
-    image: '/uae.jpg'
+    image: '/images/pexels-burst-545068.jpg'
   }
 ]
 
@@ -81,8 +82,20 @@ export default function DestinationsPage() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/5 to-accent/5">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-br from-primary/5 to-accent/5">
+        {/* Background Image */}
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="/images/pexels-tima-miroshnichenko-6549351.jpg"
+            alt="Study destinations background"
+            fill
+            className="object-cover opacity-40"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-background/70 via-background/50 to-background/70" />
+        </div>
+        
+        <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.h1 
             className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-foreground"
             initial={{ opacity: 0, y: 20 }}
@@ -97,7 +110,7 @@ export default function DestinationsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Explore our partner universities across the globe and find your perfect study destination
+            Explore world-class education opportunities across the globe
           </motion.p>
         </div>
       </section>
@@ -131,6 +144,17 @@ export default function DestinationsPage() {
                         <h2 className="text-3xl font-bold text-foreground">{destination.name}</h2>
                         <p className="text-foreground/60">Popular Study Destination</p>
                       </div>
+                    </div>
+
+                    {/* Country Image */}
+                    <div className="relative h-64 mb-6 rounded-lg overflow-hidden">
+                      <Image
+                        src={destination.image}
+                        alt={`${destination.name} study destination`}
+                        fill
+                        className="object-cover hover:scale-105 transition-transform duration-300"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
                     </div>
 
                     <p className="text-foreground/70 mb-6 leading-relaxed">
@@ -194,7 +218,10 @@ export default function DestinationsPage() {
 
                     {/* Apply Button */}
                     <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                      <Button className="px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition flex items-center gap-2">
+                      <Button 
+                        className="px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition flex items-center gap-2"
+                        onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSeZU6Pl82NN9ZOIrQgHshdBj-G3SEB7T1N64PHWfyxT4SSJ7Q/viewform', '_blank')}
+                      >
                         Apply Now
                         <ArrowRight className="w-4 h-4" />
                       </Button>
@@ -226,7 +253,10 @@ export default function DestinationsPage() {
               Let our expert counselors help you choose the perfect destination and university
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition">
+              <Button 
+                className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition"
+                onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSeZU6Pl82NN9ZOIrQgHshdBj-G3SEB7T1N64PHWfyxT4SSJ7Q/viewform', '_blank')}
+              >
                 Book Free Consultation
               </Button>
               <Button variant="outline" className="px-8 py-3 border border-border rounded-lg font-semibold hover:bg-accent transition">

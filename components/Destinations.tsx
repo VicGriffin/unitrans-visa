@@ -111,7 +111,10 @@ export default function Destinations() {
                 </div>
               </div>
 
-              <button className="w-full py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition flex items-center justify-center gap-2 group">
+              <button 
+                onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSeZU6Pl82NN9ZOIrQgHshdBj-G3SEB7T1N64PHWfyxT4SSJ7Q/viewform', '_blank')}
+                className="w-full py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition flex items-center justify-center gap-2 group"
+              >
                 Apply Now
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
               </button>

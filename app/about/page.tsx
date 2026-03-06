@@ -4,6 +4,7 @@ import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import { motion } from 'framer-motion'
 import { Target, Eye, Heart, Users, Award, Globe } from 'lucide-react'
+import Image from 'next/image'
 
 export default function AboutPage() {
   return (
@@ -11,8 +12,20 @@ export default function AboutPage() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/5 to-accent/5">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-br from-primary/5 to-accent/5">
+        {/* Background Image */}
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="/images/pexels-ekaterinabelinskaya-4922356.jpg"
+            alt="About Unitrans Visa Solutions background"
+            fill
+            className="object-cover opacity-40"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-background/70 via-background/50 to-background/70" />
+        </div>
+        
+        <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.h1 
             className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-foreground"
             initial={{ opacity: 0, y: 20 }}
@@ -169,8 +182,14 @@ export default function AboutPage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
+        </div>
+        
+        <div className="max-w-6xl mx-auto relative z-10">
           <motion.div 
             className="text-center mb-16"
             initial={{ opacity: 0, y: 20 }}
@@ -257,19 +276,22 @@ export default function AboutPage() {
                 name: 'Sarah Johnson',
                 role: 'Founder & CEO',
                 experience: '15+ years in international education',
-                expertise: 'University admissions, visa processing'
+                expertise: 'University admissions, visa processing',
+                image: '/images/Best Study Abroad Consultants in Kochi.jpg'
               },
               {
                 name: 'Michael Chen',
                 role: 'Head of Counseling',
                 experience: '12+ years in student guidance',
-                expertise: 'Career counseling, university selection'
+                expertise: 'Career counseling, university selection',
+                image: '/images/pexels-lina-5624131.jpg'
               },
               {
                 name: 'Emily Rodriguez',
                 role: 'Visa Operations Manager',
                 experience: '10+ years in visa processing',
-                expertise: 'Documentation, compliance, pre-departure'
+                expertise: 'Documentation, compliance, pre-departure',
+                image: '/images/pexels-borisk-5964658.jpg'
               }
             ].map((member, index) => (
               <motion.div
@@ -280,10 +302,14 @@ export default function AboutPage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-primary">
-                    {member.name.split(' ').map(n => n[0]).join('')}
-                  </span>
+                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 overflow-hidden">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    width={80}
+                    height={80}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className="text-xl font-semibold mb-2 text-foreground">{member.name}</h3>
                 <p className="text-primary font-medium mb-2">{member.role}</p>
