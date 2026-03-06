@@ -16,7 +16,7 @@ export default function AboutPage() {
         {/* Background Image */}
         <div className="absolute inset-0 -z-10">
           <Image
-            src="/images/pexels-ekaterinabelinskaya-4922356.jpg"
+            src="/images/education-professional.jpg"
             alt="About Unitrans Visa Solutions background"
             fill
             className="object-cover opacity-40"
@@ -50,7 +50,7 @@ export default function AboutPage() {
         {/* Background Pattern */}
         <div className="absolute inset-0 -z-10">
           <Image
-            src="/images/image.jpg"
+            src="/images/office-professional.jpg"
             alt="Company introduction background"
             fill
             className="object-cover opacity-10"
@@ -289,21 +289,21 @@ export default function AboutPage() {
                 role: 'Founder & CEO',
                 experience: '15+ years in international education',
                 expertise: 'University admissions, visa processing',
-                image: '/images/Best Study Abroad Consultants in Kochi.jpg'
+                image: '/images/team-ceo.jpg'
               },
               {
                 name: 'Michael Chen',
                 role: 'Head of Counseling',
                 experience: '12+ years in student guidance',
                 expertise: 'Career counseling, university selection',
-                image: '/images/pexels-lina-5624131.jpg'
+                image: '/images/team-counselor.jpg'
               },
               {
                 name: 'Emily Rodriguez',
                 role: 'Visa Operations Manager',
                 experience: '10+ years in visa processing',
                 expertise: 'Documentation, compliance, pre-departure',
-                image: '/images/pexels-borisk-5964658.jpg'
+                image: '/images/team-manager.jpg'
               }
             ].map((member, index) => (
               <motion.div
