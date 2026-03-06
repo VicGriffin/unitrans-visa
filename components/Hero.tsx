@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import { ArrowRight, Globe } from 'lucide-react'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 
 export default function Hero() {
   const containerVariants = {
@@ -31,15 +30,8 @@ export default function Hero() {
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/5 -z-10" />
       
-      {/* Background Image */}
+      {/* Background Image Overlay */}
       <div className="absolute inset-0 -z-20">
-        <Image
-          src="/images/Studying Abroad In The United States Psd Layering Background Wallpaper Image For Free Download - Pngtree.jpg"
-          alt="Study abroad background"
-          fill
-          className="object-cover opacity-40"
-          priority
-        />
         <div className="absolute inset-0 bg-gradient-to-br from-background/70 via-background/50 to-background/70" />
       </div>
       
