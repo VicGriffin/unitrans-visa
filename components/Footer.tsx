@@ -22,16 +22,16 @@ export default function Footer() {
             </p>
             {/* Social Links */}
             <div className="flex gap-3">
-              <a href="#" className="w-9 h-9 bg-accent/20 rounded-lg flex items-center justify-center hover:bg-accent/40 transition">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-accent/20 rounded-lg flex items-center justify-center hover:bg-accent/40 transition">
                 <Facebook className="w-4 h-4" />
               </a>
-              <a href="#" className="w-9 h-9 bg-accent/20 rounded-lg flex items-center justify-center hover:bg-accent/40 transition">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-accent/20 rounded-lg flex items-center justify-center hover:bg-accent/40 transition">
                 <Twitter className="w-4 h-4" />
               </a>
-              <a href="#" className="w-9 h-9 bg-accent/20 rounded-lg flex items-center justify-center hover:bg-accent/40 transition">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-accent/20 rounded-lg flex items-center justify-center hover:bg-accent/40 transition">
                 <Instagram className="w-4 h-4" />
               </a>
-              <a href="#" className="w-9 h-9 bg-accent/20 rounded-lg flex items-center justify-center hover:bg-accent/40 transition">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-accent/20 rounded-lg flex items-center justify-center hover:bg-accent/40 transition">
                 <Linkedin className="w-4 h-4" />
               </a>
             </div>
@@ -41,11 +41,11 @@ export default function Footer() {
           <div>
             <h3 className="font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm opacity-80">
-              <li><Link href="#services" className="hover:opacity-100 transition">Services</Link></li>
-              <li><Link href="#destinations" className="hover:opacity-100 transition">Destinations</Link></li>
-              <li><Link href="#process" className="hover:opacity-100 transition">Our Process</Link></li>
-              <li><Link href="#blog" className="hover:opacity-100 transition">Blog</Link></li>
-              <li><Link href="#" className="hover:opacity-100 transition">FAQ</Link></li>
+              <li><Link href="/#services" className="hover:opacity-100 transition">Services</Link></li>
+              <li><Link href="/#destinations-preview" className="hover:opacity-100 transition">Destinations</Link></li>
+              <li><Link href="/#process" className="hover:opacity-100 transition">Our Process</Link></li>
+              <li><Link href="/#blog" className="hover:opacity-100 transition">Blog</Link></li>
+              <li><Link href="/contact" className="hover:opacity-100 transition">FAQ</Link></li>
             </ul>
           </div>
 
@@ -53,11 +53,11 @@ export default function Footer() {
           <div>
             <h3 className="font-bold mb-4">Services</h3>
             <ul className="space-y-2 text-sm opacity-80">
-              <li><Link href="#" className="hover:opacity-100 transition">Admission Assistance</Link></li>
-              <li><Link href="#" className="hover:opacity-100 transition">Visa Processing</Link></li>
-              <li><Link href="#" className="hover:opacity-100 transition">Scholarship Guidance</Link></li>
-              <li><Link href="#" className="hover:opacity-100 transition">Language Training</Link></li>
-              <li><Link href="#" className="hover:opacity-100 transition">Accommodation</Link></li>
+              <li><Link href="/services#university-admission" className="hover:opacity-100 transition">Admission Assistance</Link></li>
+              <li><Link href="/services#visa-processing" className="hover:opacity-100 transition">Visa Processing</Link></li>
+              <li><Link href="/services#university-admission" className="hover:opacity-100 transition">Scholarship Guidance</Link></li>
+              <li><Link href="/services#ielts-training" className="hover:opacity-100 transition">Language Training</Link></li>
+              <li><Link href="/services#accommodation-arrangements" className="hover:opacity-100 transition">Accommodation</Link></li>
             </ul>
           </div>
 
@@ -94,9 +94,9 @@ export default function Footer() {
             <p>&copy; 2024 Unitrans Visa Solutions. All rights reserved.</p>
           </div>
           <div className="flex gap-6">
-            <Link href="#" className="hover:opacity-100 transition">Privacy Policy</Link>
-            <Link href="#" className="hover:opacity-100 transition">Terms of Service</Link>
-            <Link href="#" className="hover:opacity-100 transition">Contact</Link>
+            <Link href="/privacy" className="hover:opacity-100 transition">Privacy Policy</Link>
+            <Link href="/terms" className="hover:opacity-100 transition">Terms of Service</Link>
+            <Link href="/contact" className="hover:opacity-100 transition">Contact</Link>
           </div>
         </div>
       </div>

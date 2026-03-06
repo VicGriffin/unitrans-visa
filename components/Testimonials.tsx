@@ -75,7 +75,6 @@ export default function Testimonials() {
             key={current}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.5 }}
             className="bg-card border border-border rounded-lg p-8 sm:p-12"
           >
